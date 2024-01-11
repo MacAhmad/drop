@@ -1,0 +1,991 @@
+{% extends 'droppin/main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="">
+        <br><br>
+        <br>
+        <div class="main1">
+            <h3>NEATLAND BOOK</h3>
+            <hr>
+        </div>
+    </div>
+
+    <!-- feature 1 start -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="graphics" class="btn btn" style="margin: 5px; background-color: #E8DB09 !important; color:black;">
+        CONCEPTION GRAPHIQUE BOOKING <span><i class="bi bi-hand-index-thumb-fill"></i></span>
+    </button>
+    
+    <!-- Form 1 -->
+
+        <div class="container mt-5 mb-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <div class="col-md-12 m-1">
+                            <div class="card12 p-3 mb-2" style="background-image: url('../../../static/images/square_1.jpg');">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="icon"> <i class="bx bxl-mailchimp">01</i> </div>
+                                        <div class="ms-2 c-details">
+                                            <h6 class="mb-0">Conception Graphique</h6> <span>1 days ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="badge"> <span>Graphics</span> </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h3 class="heading">Optez pour<br> pour une solution graphique inhérente !</h3>
+                                    <div class="mt-5">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="mt-3 d-flex justify-content-between"> 
+                                            <span class="text1">89 Applied <span class="text2">of 100 capacity</span></span>
+                                            <div class="badge"> <span><a class="btn-warning" href="{% url 'services' %}">Apply</a></span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="p-3">
+                            <p>Nous concevons et personnalisons des packagings tels que : (<strong>casquettes, t-shirts, bracelets, écharpes, banderoles, affiches rollups, bloc notes, étiquettes, calendriers, parapluies, chemises, bulletins, et accessoires de bureau </strong>, etc...). les gammes de nos gadgets personalisées restent très étendues et variées !</p>
+                            <hr>
+                            <h5>Vous avez un budget restreint ?</h5>
+                            <p>NEAT IT CORP met les petits plats dans les grands pour vous satisfaire. Vous saurez également suivre vos commandes en lignes, les modifier tant que besoin de se fait jusqu'à la réalisation parfaite de votre choix ! ne vous morfondez plus à spéculer de qui vous ferez confectionner vos gadgets personnalisées, essayez et vous n'aurez rien à regretter !</p>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+                <!-- Modal -->
+
+                <div class="col-md-6">
+                    <div class="container col-md-12 m-1">
+                        <div class="" id="">
+                            <div class="content">
+                                <div class="header">
+                                    <h1 class="title fs-5" id=""><span><img src="{% static 'images/neat_logo.png' %}" width="5%" alt="neat_logo" class="invert img"></span> | Graphic Design - <span>Booking Enquiries</span></h1>
+                                </div>
+                                <div class="body rounded-4 shadow-4" style="background-color: #E8DB09 !important;">
+
+                                <!-- form start -->
+                                    <form class="needs-validation p-2" id="form1" name="form1" action="#" method="POST">
+                                        <!-- 8 column grid layout with text inputs for the email & the message -->
+                                        {% csrf_token %}
+
+                                        <div class="d-flex justify-content-between">
+                                            <!-- name input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_name">Author name</label>
+                                                <input type="text" id="auth_name" name="auth_name" id="auth_name" class="form-control" required />
+                                            </div>
+                                            
+                                            <!-- Email input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_email">Author Email</label>
+                                                <input type="email" id="auth_email" name="auth_email" id="auth_email" class="form-control" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <!-- Address input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_city">Address / City</label>
+                                                <input type="text" id="auth_city" name="auth_city" id="auth_city" class="form-control" required />
+                                            </div>
+                                            
+                                            <!-- Passport input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_gsm">Phone Number</label>
+                                                <input type="text" id="auth_gsm" name="auth_gsm" id="auth_gsm" class="form-control" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <!-- Civil status input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_id">Product / Service</label>
+                                                <select name="" id="auth_id" name="auth_id" id="auth_id" class="form-control" required>
+                                                    <option value="Select">Select</option>
+                                                    <option value="Logo">Logo</option>
+                                                    <option value="V_card">V_card</option>
+                                                    <option value="Flyer">Flyer</option>
+                                                    <option value="Flocage">Flocage</option>
+                                                    <option value="Banderole">Banderole</option>
+                                                    <option value="Chevalet_table">Chevalet_table</option>
+                                                    <option value="Spot_pub">Spot_pub</option>
+                                                    <option value="Affiche_2D/3D">Affiche_2D/3D</option>
+                                                    <option value="Shooting">Shooting</option>
+                                                    <option value="Clip_video">Clip_video</option>
+                                                    <option value="Film">Film</option>
+                                                    <option value="Animation_3D">Animation_3D</option>
+                                                    <option value="Autre">Autre</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Phone number input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_qty">Quantity</label>
+                                                <input type="text" id="auth_qty" name="auth_qty" id="auth_qty" class="form-control" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <!-- NIR input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_occ">Occasion For</label>
+                                                <input type="text" id="auth_occ" name="auth_occ" id="auth_occ" class="form-control" required />
+                                            </div>
+                                            
+                                            <!-- Nationality input -->
+                                            <div class="form-outline mb-2">
+                                                <label class="form-label" for="auth_date">Delivering Date</label>
+                                                <input type="date" id="auth_date" name="auth_date" id="auth_date" class="form-control" required />
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Message input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="auth_mess">Message</label>  
+                                            <textarea type="password" id="auth_mess" name="auth_mess" id="auth_mess" class="form-control" placeholder="Short message of your booking's details"></textarea>
+                                        </div>
+                        
+                                        <!-- Checkbox -->
+                                        <div class="form-check d-flex justify-content-center mb-4">
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="checkit1" name="checkit1" checked />
+                                            <label class="form-check-label" for="checkit1">
+                                                Less than 5 minutes to validate your booking 
+                                            </label>
+                                        </div>
+                        
+                                        <!-- Register buttons -->
+                                        <div class="text-center">
+                                            <p>follow us on:</p>
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                                            </button>
+
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                                            </button>
+                            
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                                            </button>
+                            
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                                            </button>
+                            
+                                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                                <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                                            </button>
+
+                                            </div>
+                                            <!-- Submit button -->
+                                                <div class="d-flex m-1 justify-content-center">
+                                                    <button type="submit" name="submit1" onclick="graphic()" value="submit" class="btn btn-primary">Book In</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                <!-- form end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end modal 1 -->
+                </div>
+            </div>
+        </div>
+
+    <!-- feature 1 end -->
+
+
+    <!-- feature 2 end -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="web" class="btn btn" style="margin: 5px; background-color: purple; color: white;">
+        WEB DESIGN BOOKING <span><i class="bi bi-hand-index-thumb-fill"></i></span>
+    </button>
+
+    <!-- Form 2 -->
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12 d-flex justify-content-between">
+                    <div class="col-md-12 m-1">
+                        <div class="card12 p-3 mb-2" style="background-image: url('../../../static/images/pack_2.jpg');">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="icon"> <i class="bx bxl-mailchimp">02</i> </div>
+                                    <div class="ms-2 c-details">
+                                        <h6 class="mb-0">Web Design</h6> <span>14 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="badge"> <span>Web apps</span> </div>
+                            </div>
+                            <div class="mt-5">
+                                <h3 class="heading">Des applications web &amp; mobiles<br> taillées à vos besoins !</h3>
+                                <div class="mt-5">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 79%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between"> 
+                                        <span class="text1">79 Applied <span class="text2">of 100 capacity</span></span>
+                                        <div class="badge"> <span><a class="btn-warning" href="{% url 'services' %}">Apply</a></span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="p-3">
+                        <p>A l'ère du numérique, vous avez besoin de faire rétentir votre marque à partir d'une plateforme sans équivoque et se démarquant de toutes les communautés. Nous développons pour vous des sites web et applications mobiles propres à votre besoin et très ergonomiques ! Passez la commande des <strong>applications de gestion de données, de facturation, de gestions des stocks, du personnel, des ERPs, etc... </strong></p>
+                        <hr>
+                        <h5>Comment traitez-vous vos données?</h5>
+                        <p>NEAT IT CORP, c'est aussi le hostings de vos données et le top niveau de sécurité de celles-ci ! Commandez des mini-serveurs, ou devenez propriétaires de mini-cloud pour le stockages de vos données, tel que vous puissiez y mettre main de ffaçon assez courante.</p>
+                    </div>
+                </div>
+            </div>
+            
+                
+            <!-- Form 2 -->
+
+            <div class="col-md-6">
+                <div class="container col-md-12 m-1">
+                    <div class="" id="">
+                        <div class="content">
+                            <div class="header">
+                                <h1 class="title fs-5" id=""><span><img src="{% static 'images/neat_logo.png' %}" width="5%" alt="neat_logo" class="invert img"></span> | Web Design - <span>Booking Enquiries</span></h1>
+                            </div>
+                            <div class="body rounded-4 shadow-4" style="background-color: #E8DB09 !important;">
+
+                            <!-- form start -->
+                                <form class="needs-validation p-2" id="form2" name="form2" action="#" method="POST">
+                                    <!-- 8 column grid layout with text inputs for the email & the message -->
+                                    {% csrf_token %}
+
+                                    <div class="d-flex justify-content-between">
+                                        <!-- name input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_name">Author name</label>
+                                            <input type="text" id="web_name" name="web_name" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_email">Author Email</label>
+                                            <input type="email" id="web_email" name="web_email" class="form-control" required />
+                                        </div>
+                                    </div>
+            
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Address input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_city">Address / City</label>
+                                            <input type="text" id="web_city" name="web_city" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Passport input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_gsm">Phone Number</label>
+                                            <input type="text" id="web_gsm" name="web_gsm" class="form-control" required />
+                                        </div>
+                                    </div>
+            
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Civil status input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_id">Product / Service</label>
+                                            <select name="" id="web_id" name="web_id" class="form-control" required>
+                                                <option value="Select">Select</option>
+                                                <option value="Site_vitrine">Site_vitrine</option>
+                                                <option value="Portefolio">Portefolio</option>
+                                                <option value="Site_ecommerce">Site_ecommerce</option>
+                                                <option value="Application_facturation">Application_facturation</option>
+                                                <option value="Application_mobile">Application_mobile</option>
+                                                <option value="GMAO">GMAO</option>
+                                                <option value="Conception_BD">Conception_BD</option>
+                                                <option value="Systeme_authentification">Systeme_authentification</option>
+                                                <option value="Application_hosting">Application_hosting</option>
+                                                <option value="Referencement">Referencement</option>
+                                                <option value="Formation">Formation</option>
+                                                <option value="Autre">Autre</option>
+                                            </select>
+                                        </div>
+            
+                                        <!-- Phone number input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_qty">Quantity</label>
+                                            <input type="text" id="web_qty" name="web_qty" class="form-control" required />
+                                        </div>
+                                    </div>
+            
+                                    <div class="d-flex justify-content-between">
+                                        <!-- NIR input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_occ">Occasion For</label>
+                                            <input type="text" id="web_occ" name="web_occ" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Nationality input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="web_date">Delivering Date</label>
+                                            <input type="date" id="web_date" name="web_date" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Message input -->
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="web_mess">Message</label>  
+                                        <textarea type="password" id="web_mess" name="web_mess" class="form-control" placeholder="Short message of your booking's description"></textarea>
+                                    </div>
+                    
+                                    <!-- Checkbox -->
+                                    <div class="form-check d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="checkit2" checked />
+                                        <label class="form-check-label" for="checkit2">
+                                            Less than 5 minutes to validate your booking 
+                                        </label>
+                                    </div>
+                    
+                                    <!-- Register buttons -->
+
+                                    <div class="text-center">
+                                        <p>follow us on:</p>
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                                        </button>
+            
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                                        </button>
+            
+                                        <div>
+                                            <!-- Submit button -->
+                                            <div class="d-flex m-1 justify-content-center">
+                                                <button type="submit" name="submit2" onclick="web()" value="submit" class="btn btn-primary">Book In</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            <!-- form end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end modal 2 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- feature 2 end -->
+
+
+    <!-- feature 3 start -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="digital" class="btn btn" style="margin: 5px; background-color: teal; color: white;">
+        TRANSFORMATION DIGITALE BOOKING <span><i class="bi bi-hand-index-thumb-fill"></i></span>
+    </button>
+
+    <!-- Form 3 -->
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12 d-flex justify-content-between">
+                    <div class="col-md-12 m-1">
+                        <div class="card12 p-3 mb-2" style="background-image: url('../../../static/images/immigrant.jpeg');">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="icon"> <i class="bx bxl-mailchimp">03</i> </div>
+                                    <div class="ms-2 c-details">
+                                        <h6 class="mb-0">Transformation Digitale</h6> <span>30 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="badge"> <span>Digitals</span> </div>
+                            </div>
+                            <div class="mt-5">
+                                <h3 class="heading">Optez pour la digitalisation<br> de vos services et processus !</h3>
+                                <div class="mt-5">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 69%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between"> 
+                                        <span class="text1">69 Applied <span class="text2">of 94 capacity</span></span>
+                                        <div class="badge"> <span><a class="btn-warning" href="{% url 'services' %}">Apply</a></span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="p-3">
+                        <p>Chez NEAT IT CORP, vous abandonnez vos vieilles méthodes à travers un processus de digitalisation et d'automatisation des systèmes de traitement d'information. Apprenez et intégrez la notion de <strong>Cloud Computing</strong> selon votre domaine d'exercice et d'activité. Faites vous former et intégrez notre équipe projet sur le management et la transformation digitale !</p>
+                        <hr>
+                        <h5>Pourquoi la transformation digitale ?</h5>
+                        <p>Le monde entier fait face à la plus grande menace étant la sécurisation et l'échange des données. Vous êtes entrepreneurs et avez besoin de ménager l'intégrité de vos données et avoir mise dessus en tout temps et tout lieu : participer à nos <strong>séminaires et ateliers sur la transformation digitale, la mise en place des solutions cloud etc... </strong> </p>
+                    </div>
+                </div>
+            </div>
+            
+                
+            <!-- Form 2 -->
+
+            <div class="col-md-6">
+                <div class="container col-md-12 m-1">
+                    <div class="" id="">
+                        <div class="content">
+                            <div class="header">
+                                <h1 class="title fs-5" id=""><span><img src="{% static 'images/neat_logo.png' %}" width="5%" alt="neat_logo" class="invert img"></span> | Digital Transformation - <span>Booking Enquiries</span></h1>
+                            </div>
+                            <div class="body rounded-4 shadow-4" style="background-color: #E8DB09 !important;">
+
+                            <!-- form start -->
+                                <form class="needs-validation p-2" id="form3" name="form3" action="#" method="POST">
+                                    <!-- 8 column grid layout with text inputs for the email & the message -->
+                                    {% csrf_token %}
+
+                                    <div class="d-flex justify-content-between">
+                                        <!-- name input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_name">Author name</label>
+                                            <input type="text" id="td_name" name="td_name" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_email">Author Email</label>
+                                            <input type="email" id="td_email" name="td_email" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Address input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_city">Address / City</label>
+                                            <input type="text" id="td_city" name="td_city" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Passport input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_gsm">Phone Number</label>
+                                            <input type="text" id="td_gsm" name="td_gsm" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Civil status input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_id">Product / Service</label>
+                                            <select name="" id="td_id" name="td_id" class="form-control" required>
+                                                <option value="Select">Select</option>
+                                                <option value="Feuille_de_route">Feuille_de_route</option>
+                                                <option value="Gestion_projet">Gestion_projet</option>
+                                                <option value="Cloud_computing">Cloud_computing</option>
+                                                <option value="Automatisation_processus">Automatisation_processus</option>
+                                                <option value="Digitalisation_des_services">Digitalisation_des_services</option>
+                                                <option value="Seminaire">Seminaire</option>
+                                                <option value="Online_course">Online_course</option>
+                                                <option value="Formation">Formation</option>
+                                                <option value="Autre">Autre</option>
+                                            </select>
+                                        </div>
+                
+                                        <!-- Phone number input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_qty">Quantity</label>
+                                            <input type="text" id="td_qty" name="td_qty" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- NIR input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_occ">Occasion For</label>
+                                            <input type="text" id="td_occ" name="td_occ" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Nationality input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="td_date">Delivering Date</label>
+                                            <input type="date" id="td_date" name="td_date" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Message input -->
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="td_mess">Message</label>  
+                                        <textarea type="password" id="td_mess" name="td_mess" class="form-control" placeholder="Short message of your booking's description"></textarea>
+                                    </div>
+                    
+                                    <!-- Checkbox -->
+                                    <div class="form-check d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="checkit3" checked />
+                                        <label class="form-check-label" for="checkit3">
+                                            Less than 5 minutes to validate your booking 
+                                        </label>
+                                    </div>
+                    
+                                    <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>follow us on:</p>
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                                        </button>
+                
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                                        </button>
+                                    </div>
+            
+                                    <div>
+                                        <!-- Submit button -->
+                                        <div class="d-flex m-1 justify-content-center">
+                                            <button type="submit" name="submit3" onclick="transform()" value="submit" class="btn btn-primary">Book In</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            <!-- form end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end modal 3 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- feature 3 end -->
+
+
+    <!-- feature 4 start -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="marketing" class="btn btn" style="margin: 5px; background-color: orange; color: white;">
+        MARKETING DIGITAL BOOKING <span><i class="bi bi-hand-index-thumb-fill"></i></span>
+    </button>
+
+    <!-- Form 4 -->
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12 d-flex justify-content-between">
+                    <div class="col-md-12 m-1">
+                        <div class="card12 p-3 mb-2" style="background-image: url('../../../static/images/design_1.jpg');">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="icon"> <i class="bx bxl-mailchimp">04</i> </div>
+                                    <div class="ms-2 c-details">
+                                        <h6 class="mb-0">Marketing Digital</h6> <span>1 week ago</span>
+                                    </div>
+                                </div>
+                                <div class="badge"> <span>Business</span> </div>
+                            </div>
+                            <div class="mt-5">
+                                <h3 class="heading">Boostez votre visibilité !<br> choisissez NEAT IT CORP !</h3>
+                                <div class="mt-5">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 58%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between"> 
+                                        <span class="text1">58 Applied <span class="text2">of 70 capacity</span></span>
+                                        <div class="badge"> <span><a class="btn-warning" href="{% url 'services' %}">Apply</a></span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="p-3">
+                        <p><strong>Le marketing digital</strong> : La fièvre du moment. Tout le monde en parle et s'amuse à en pratiquer. Retenons que le marketing digital repose autour d'une question de stratégie entreprenante. Vous êtes <strong>business owner</strong> ? Alors laissez-nous redorer votre label, votre marque, et faire parler de vous au présent et au futur !</p>
+                        <hr>
+                        <h5>Avez-vous besoin de marketing digital pour votre entreprise ?</h5>
+                        <p>La réponse est oui : tout entrepreneur en a besoin. L'étude de marché vous offre l'opportunité de vous tailler une part de clientèle que vous saurez garder seulement si vous développez une stratégie marketing idouane : Et bien, c'est là que nous intervenons, à travers <strong>la gestion de vos comptes et pages Réseaux Sociaux, de vos actifs digitaux, sites web, des formations, séminaires, ateliers etc...</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+                
+            <!-- Form 4 -->
+
+            <div class="col-md-6">
+                <div class="container col-md-12 m-1">
+                    <div class="" id="">
+                        <div class="content">
+                            <div class="header">
+                                <h1 class="title fs-5" id=""><span><img src="{% static 'images/neat_logo.png' %}" width="5%" alt="neat_logo" class="invert img"></span> | Digital Marketing - <span>Booking Enquiries</span></h1>
+                            </div>
+                            <div class="body rounded-4 shadow-4" style="background-color: #E8DB09 !important;">
+
+                            <!-- form start -->
+                                <form class="needs-validation p-2" id="form4" name="form4" action="#" method="POST">
+                                    <!-- 8 column grid layout with text inputs for the email & the message -->
+                                    {% csrf_token %}
+
+                                    <div class="d-flex justify-content-between">
+                                        <!-- name input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_name">Author name</label>
+                                            <input type="text" id="md_name" name="md_name" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_email">Author Email</label>
+                                            <input type="email" id="md_email" name="md_email" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Address input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_city">Address / City</label>
+                                            <input type="text" id="md_city" name="md_city" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Passport input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_gsm">Phone Number</label>
+                                            <input type="text" id="md_gsm" name="md_gsm" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Civil status input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_id">Product / Service</label>
+                                            <select name="" id="md_id" name="md_id" class="form-control" required>
+                                                <option value="Select">Select</option>
+                                                <option value="Couverture_evenement">Couverture_evenement</option>
+                                                <option value="Organisation_evenement">Organisation_evenement</option>
+                                                <option value="Community_management">Community_management</option>
+                                                <option value="Comptes_RS">Comptes_RS</option>
+                                                <option value="Pages_RS">Pages_RS</option>
+                                                <option value="Boost_RS">Boost_RS</option>
+                                                <option value="SEO">SEO</option>
+                                                <option value="Campagnes_pub">Campagnes_pub</option>
+                                                <option value="Gestion_projet">Gestion_projet</option>
+                                                <option value="Vente_en_ligne">Vente_en_ligne</option>
+                                                <option value="Partenariat">Partenariat</option>
+                                                <option value="Formation">Formation</option>
+                                                <option value="Autre">Autre</option>
+                                            </select>
+                                        </div>
+                
+                                        <!-- Phone number input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_qty">Quantity</label>
+                                            <input type="text" id="md_qty" name="md_qty" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- NIR input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_occ">Occasion For</label>
+                                            <input type="text" id="md_occ" name="md_occ" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Nationality input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="md_date">Delivering Date</label>
+                                            <input type="date" id="md_date" name="md_date" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Message input -->
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="md_mess">Message</label>  
+                                        <textarea type="password" id="md_mess" name="md_mess" class="form-control" placeholder="Short message of your booking's motivation"></textarea>
+                                    </div>
+                    
+                                    <!-- Checkbox -->
+                                    <div class="form-check d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="checkit4" checked />
+                                        <label class="form-check-label" for="checkit4">
+                                            Less than 5 minutes to validate your booking 
+                                        </label>
+                                    </div>
+                    
+                                    <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>follow us on:</p>
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                                        </button>
+                
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                                        </button>
+                                    </div>
+            
+                                    <div>
+                                        <!-- Submit button -->
+                                        <div class="d-flex m-1 justify-content-center">
+                                            <button type="submit" name="submit4" onclick="marketing()" value="submit" class="btn btn-primary">Book In</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            <!-- form end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end modal 4 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- feature 4 end -->
+
+    <!-- feature 5 start -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="security" class="btn btn" style="margin: 5px; background-color: red; color: white;">
+        VIDEO-SURVEILLANCE BOOKING <span><i class="bi bi-hand-index-thumb-fill"></i></span>
+    </button>
+
+    <!-- Form 5 -->
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12 d-flex justify-content-between">
+                    <div class="col-md-12 m-1">
+                        <div class="card12 p-3 mb-2" style="background-image: url('../../../static/images/web_3.jpg');">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="icon"> <i class="bx bxl-mailchimp">05</i> </div>
+                                    <div class="ms-2 c-details">
+                                        <h6 class="mb-0">Pack Video-Surveillance</h6> <span>1 minute ago</span>
+                                    </div>
+                                </div>
+                                <div class="badge"> <span>Security</span> </div>
+                            </div>
+                            <div class="mt-5">
+                                <h3 class="heading">Votre sécurité d'abord !<br> Optez pour un kit sécurité !</h3>
+                                <div class="mt-5">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 39%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between"> 
+                                        <span class="text1">39 Applied <span class="text2">of 90 capacity</span></span>
+                                        <div class="badge"> <span><a class="btn-warning" href="{% url 'services' %}">Apply</a></span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="p-3">
+                        <h5>Votre sécurité, notre affaire !</h5>
+                        <p>Il reste important d'avoir mise sur votre domicile, ou votre lieu de service en tout temps et en tout lieu; NEAT IT CORP, s'occupe de sécuriser vos locaux à travers un <strong>Pack Video-Surveillance</strong> équipé de toutes les gadgets dont vous avez besoin pour garder l'oeil sur vos bien et propriétés.</p>
+                        <hr>
+                        <h5>Sécurité en entreprise :</h5>
+                        <p>Nous commercialisons aussi des dispositifs de sécurités high-tech tels : <strong>des caméra-hd 360°, des détecteurs de métaux et de mouvement, des détecteurs d'incendie, des détecteurs de température, des mouchards, des vidéophones </strong>, etc...</p>
+                    </div>
+                </div>
+            </div>
+            
+                
+            <!-- Form 5 -->
+
+            <div class="col-md-6">
+                <div class="container col-md-12 m-1">
+                    <div class="" id="">
+                        <div class="content">
+                            <div class="header">
+                                <h1 class="title fs-5" id=""><span><img src="{% static 'images/neat_logo.png' %}" width="5%" alt="neat_logo" class="invert img"></span> | Video-Surveillance - <span>Booking Enquiries</span></h1>
+                            </div>
+                            <div class="body rounded-4 shadow-4" style="background-color: #E8DB09 !important;">
+
+                            <!-- form start -->
+                                <form class="needs-validation p-2" id="form5" name="form5" action="#" method="POST">
+                                    <!-- 8 column grid layout with text inputs for the email & the message -->
+                                    {% csrf_token %}
+
+                                    <div class="d-flex justify-content-between">
+                                        <!-- name input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_name">Author name</label>
+                                            <input type="text" id="vs_name" name="vs_name" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_email">Author Email</label>
+                                            <input type="email" id="vs_email" name="vs_email" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Address input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_city">Address / City</label>
+                                            <input type="text" id="vs_city" name="vs_city" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Passport input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_gsm">Phone Number</label>
+                                            <input type="text" id="vs_gsm" name="vs_gsm" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- Civil status input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_id">Product / Service</label>
+                                            <select name="" id="vs_id" name="vs_id" class="form-control" required>
+                                                <option value="Select">Select</option>
+                                                <option value="Camera_surveillance">Camera_surveillance</option>
+                                                <option value="Installation_video">Installation_video</option>
+                                                <option value="Detecteur_mouvement">Detecteur_mouvement</option>
+                                                <option value="Alarmes_incendie">Alarmes_incendie</option>
+                                                <option value="Alarmes_securite">Alarmes_securite</option>
+                                                <option value="Antivol">Antivol</option>
+                                                <option value="Panel_surveillance">Panel_surveillance</option>
+                                                <option value="Video_phone">Video_phone</option>
+                                                <option value="Mouchard">Mouchard</option>
+                                                <option value="Badge_electronique">Badge_electronique</option>
+                                                <option value="Kit_securite">Kit_securite</option>
+                                                <option value="Formation">Formation</option>
+                                                <option value="Autre">Autre</option>
+                                            </select>
+                                        </div>
+                
+                                        <!-- Phone number input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_qty">Quantity</label>
+                                            <input type="text" id="vs_qty" name="vs_qty" class="form-control" required />
+                                        </div>
+                                    </div>
+                
+                                    <div class="d-flex justify-content-between">
+                                        <!-- NIR input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_occ">Occasion For</label>
+                                            <input type="text" id="vs_occ" name="vs_occ" class="form-control" required />
+                                        </div>
+                                        
+                                        <!-- Nationality input -->
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="vs_date">Delivering Date</label>
+                                            <input type="date" id="vs_date" name="vs_date" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Message input -->
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="vs_mess">Message</label>  
+                                        <textarea type="password" id="vs_mess" name="vs_mess" class="form-control" placeholder="Short message of your booking's details"></textarea>
+                                    </div>
+                    
+                                    <!-- Checkbox -->
+                                    <div class="form-check d-flex justify-content-center mb-4">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="checkit5" checked />
+                                        <label class="form-check-label" for="checkit5">
+                                            Less than 5 minutes to validate your booking 
+                                        </label>
+                                    </div>
+                    
+                                    <!-- Register buttons -->
+                                    <div class="text-center">
+                                        <p>follow us on:</p>
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                                        </button>
+                
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                                        </button>
+                        
+                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                            <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                                        </button>
+                                    </div>
+            
+                                    <div>
+                                        <!-- Submit button -->
+                                        <div class="d-flex m-1 justify-content-center">
+                                            <button type="submit" name="submit5" onclick="security()" value="submit" class="btn btn-primary">Book In</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            <!-- form 5 end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end modal 5 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- feature 5 end -->
+
+
+{% endblock %}

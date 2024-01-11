@@ -1,0 +1,21 @@
+{% extends 'droppin/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="">
+    <br><br>
+    <br>
+    <div class="main1">
+        <h3>NEATLAND ACTUALITIES</h3>
+        <hr>
+        <h6 class="col-md-l4 align-text-top-right">{{ date|date:"d-m-Y / H:i:s" }} </h6>
+    </div>
+</div>
+
+<h2 style="color: darkblue"></h2><h5 class="box-element rounded float-end" style="background-color: transparent; color: white;" >{{ request.user }} online. <span> </span></h5>
+
+<br>
+
+{% endblock content %}

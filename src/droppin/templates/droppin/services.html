@@ -1,0 +1,224 @@
+{% extends 'droppin/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="">
+    <br><br>
+    <br>
+    <div class="main1">
+        <h3>NEATLAND ORDERS</h3>
+        <hr>
+    </div>
+</div>
+
+<!-- forms start -->
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-2 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-3">Set your order now</h2>
+              <em>(S'inscrire d'abord)<a class="nav-link btn btn-warning" href="{% url 'connect' %}">ici</a></em>
+              <br>
+
+              {% if user.is_authenticated %}
+
+              <form class="needs-validation" id="form1" action="#" method="POST">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                {% csrf_token %}
+              
+                <!-- Client name & email -->
+                <div class="d-flex justify-content-between">
+                    <div class="form-outline mb-4 m-1 col-md-6">
+                        <label class="form-label" for="cli_name"><strong>Nom du Client</strong> <em>(ou de l'entreprise)</em></label>
+                        <input type="text" id="cli_name" name="cli_name" class="form-control" data-pdf-form-field="true" required />
+                    </div>
+
+                    <div class="form-outline mb-4 m-1 col-md-6">
+                        <label class="form-label" for="cli_email"><strong>Email du Client</strong> <em>(ou de l'entreprise)</em></label>
+                        <input type="email" id="cli_email" name="cli_email" class="form-control" data-pdf-form-field="true" required />
+                    </div>
+                </div>
+
+                <!-- Client addresses  -->
+                <div class="d-flex justify-content-between">
+                  <div class="form-outline mb-4 m-1 col-md-4">
+                      <label class="form-label" for="cli_address"><strong>Adresse</strong> <em>(Rue + Quartier)</em></label>
+                      <input type="text" id="cli_address" name="cli_address" class="form-control" data-pdf-form-field="true" required />
+                  </div>
+
+                  <div class="form-outline mb-4 m-1 col-md-4">
+                    <label class="form-label" for="cli_city"><strong>Ville</strong> <em>(en toutes lettres)</em></label>
+                    <input type="text" id="cli_city" name="cli_city" class="form-control" data-pdf-form-field="true" required />
+                  </div>
+
+                  <div class="form-outline mb-4 m-1 col-md-4">
+                      <label class="form-label" for="cli_phone"><strong>Téléphone</strong> <em>(+code pays)</em></label>
+                      <input type="text" id="cli_phone" name="cli_phone" class="form-control" data-pdf-form-field="true" required />
+                  </div>
+              </div>
+
+
+                <!-- Client need - quantity - due date -->
+                <div class="d-flex justify-content-between">
+                    <!-- subject input -->
+                    <div class="form-outline mb-4 m-1 col-md-4">
+                        <label class="form-label" for="cli_subj"><strong>Produit / Service</strong></label>
+                        <select type="text" id="cli_subj" name="cli_subj" class="form-control" data-pdf-form-field="true" required>
+                            <option value="Select">Select</option>
+                            <option value="Logo">Logo</option>
+                            <option value="V_card">V_card</option>
+                            <option value="Flyer">Flyer</option>
+                            <option value="Flocage">Flocage</option>
+                            <option value="Banderole">Banderole</option>
+                            <option value="Chevalet_table">Chevalet_table</option>
+                            <option value="Spot_pub">Spot_pub</option>
+                            <option value="Affiche_2D/3D">Affiche_2D/3D</option>
+                            <option value="Shooting">Shooting</option>
+                            <option value="Clip_video">Clip_video</option>
+                            <option value="Film">Film</option>
+                            <option value="Animation_3D">Animation_3D</option>
+                            <option value="Site_vitrine">Site_vitrine</option>
+                            <option value="Portefolio">Portefolio</option>
+                            <option value="Site_ecommerce">Site_ecommerce</option>
+                            <option value="Application_facturation">Application_facturation</option>
+                            <option value="Application_mobile">Application_mobile</option>
+                            <option value="GMAO">GMAO</option>
+                            <option value="Conception_BD">Conception_BD</option>
+                            <option value="Systeme_authentification">Systeme_authentification</option>
+                            <option value="Application_hosting">Application_hosting</option>
+                            <option value="Referencement">Referencement</option>
+                            <option value="Feuille_de_route">Feuille_de_route</option>
+                            <option value="Gestion_projet">Gestion_projet</option>
+                            <option value="Cloud_computing">Cloud_computing</option>
+                            <option value="Automatisation_processus">Automatisation_processus</option>
+                            <option value="Digitalisation_des_services">Digitalisation_des_services</option>
+                            <option value="Couverture_evenement">Couverture_evenement</option>
+                            <option value="Organisation_evenement">Organisation_evenement</option>
+                            <option value="Community_management">Community_management</option>
+                            <option value="Comptes_RS">Comptes_RS</option>
+                            <option value="Pages_RS">Pages_RS</option>
+                            <option value="Boost_RS">Boost_RS</option>
+                            <option value="SEO">SEO</option>
+                            <option value="Campagnes_pub">Campagnes_pub</option>
+                            <option value="Gestion_projet">Gestion_projet</option>
+                            <option value="Vente_en_ligne">Vente_en_ligne</option>
+                            <option value="Partenariat">Partenariat</option>
+                            <option value="Camera_surveillance">Camera_surveillance</option>
+                            <option value="Installation_video">Installation_video</option>
+                            <option value="Detecteur_mouvement">Detecteur_mouvement</option>
+                            <option value="Alarmes_incendie">Alarmes_incendie</option>
+                            <option value="Alarmes_securite">Alarmes_securite</option>
+                            <option value="Antivol">Antivol</option>
+                            <option value="Panel_surveillance">Panel_surveillance</option>
+                            <option value="Video_phone">Video_phone</option>
+                            <option value="Mouchard">Mouchard</option>
+                            <option value="Badge_electronique">Badge_electronique</option>
+                            <option value="Kit_securite">Kit_securite</option>
+                            <option value="Seminaire">Seminaire</option>
+                            <option value="Online_course">Online_course</option>
+                            <option value="Formation">Formation</option>
+                        </select>
+                    </div>
+
+                    <!-- quantity input -->
+                    <div class="form-outline mb-4 m-1 col-md-4">
+                        <label class="form-label" for="cli_qty"><strong>Quantité</strong></label>
+                        <input type="text" id="cli_qty" name="cli_qty" class="form-control" data-pdf-form-field="true" required />
+                    </div>
+
+                    <!-- delivery input -->
+                    <div class="form-outline mb-4 m-1 col-md-4">
+                        <label class="form-label" for="cli_date"><strong>Date de Livraison</strong></label>
+                        <input type="date" id="cli_date" name="cli_date" class="form-control" data-pdf-form-field="true" />
+                    </div>
+                </div>
+  
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" name="checkit" id="checkit" checked />
+                  <label class="form-check-label" for="checkit">
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+  
+                <!-- Submit button -->
+                <button type="submit" name="submit" onclick="whatsapp()" value="Submit" class="btn btn-primary btn-block mb-4">
+                  Soumettre la commande
+                </button>
+  
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>follow us on:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                  </button>
+                </div>
+              </form>
+
+              {% endif %}
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="{% static 'images/v_001.jpg' %}" width="600" height="800" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+  
+
+<!-- froms end -->
+
+{% endblock %}
+
+
+
+{% comment %} <!-- Address & birth input -->
+<div class="d-flex justify-content-between">
+  <div class="form-outline mb-4 m-1 col-md-4">
+      <label class="form-label" for="resume"><strong>Upload your Resume</strong></label>
+      <input type="file" id="resume" name="resume" class="form-control" multiple="multiple" data-pdf-form-field="true" required />
+  </div>
+</div> {% endcomment %}

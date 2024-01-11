@@ -1,0 +1,272 @@
+body{
+    background-color: aliceblue;
+}
+
+.img{
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px grey;
+}
+
+.titre{
+    box-shadow: 20px 20px 50px 10px pink inset;
+    width: fit-content;
+    border-radius: 15px;
+}
+
+
+/* navbar menu css */
+
+#mainNavigation a {
+    font-family: 'Cabin', sans-serif;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.4)
+  }
+  
+  .dropdown-menu {
+    background:#03727d
+  }
+  a.dropdown-toggle {
+    color:#dfdfdf !important
+  }
+  a.dropdown-item:hover {
+    color:#03727d !important
+  }
+  .nav-item a{
+    color:#dfdfdf;
+  }
+  .nav-item a:hover {
+    color:#fff
+  }
+  .nav-item{
+    min-width:12vw;
+  }
+  #mainNavigation {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:123;
+    padding-bottom:120px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  }
+  #navbarNavDropdown.collapsing .navbar-nav,
+  #navbarNavDropdown.show .navbar-nav{
+    background:#037582;
+    padding:12px;
+  }
+
+
+/* navbar menu css */
+  .main1{
+    margin: 100px 10px;
+  }
+
+
+/* cards menu css */
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card1 {
+    border: none;
+    border-radius: 10px;
+    background-image: url('../images/gadget_1.jpg') !important;
+}
+
+.card11 {
+  border: none;
+  border-radius: 10px;
+}
+
+.card12 {
+  border: none;
+  border-radius: 10px;
+}
+
+.card13 {
+  border: none;
+  border-radius: 10px;
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+
+/* sliders css */
+
+.home .carousel-item{
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 15px 15px 15px 45px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.home .carousel-item::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.home .carousel-item .container{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home .carousel-item h2{
+  font-size: 80px;
+  margin: 0 0 10px;
+  color: whitesmoke;
+  opacity: 0;
+}
+
+.home .carousel-item p{
+  font-size: 30px;
+  margin: 0;
+  color: #eeeeee;
+  opacity: 0;
+}
+
+.home .carousel-item.active h2{
+  animation: fadeInLeft 0.5s ease forwards;
+}
+
+.home .carousel-item.active p{
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft{
+  0%{
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInRight{
+  0%{
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.home .carousel-controls {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  bottom: 10%;
+  z-index: 10;
+  transform: translate(-50%);
+
+}
+
+.home .carousel-indicators {
+position: relative;
+margin: 0;
+}
+
+.home .carousel-indicators li{
+  height: 70px;
+  width: 70px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.home .carousel-indicators li.active{
+  border-color: whitesmoke;
+  transform: scale(1.2);
+}
+
+.home .carousel-control-next{
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  opacity: 1;
+  z-index: 3;
+  top: -30%;
+  transform: translateY(50%);
+  border-radius: 50%;
+}
+
+.home .carousel-control-prev{
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  opacity: 1;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+

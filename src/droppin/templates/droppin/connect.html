@@ -1,0 +1,137 @@
+{% extends 'droppin/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="">
+    <br><br>
+    <br>
+    <div class="main1">
+        <h3>SIGN UP</h3>
+        <hr>
+    </div>
+</div>
+
+<!-- forms start -->
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <div class="header">
+                <img src="{% static 'images/logo_1.png' %}" width="50%" alt="neat_logo" class="brand-logo">
+              </div>
+              <form class="needs-validation" action="{% url 'connect' %}" method="POST">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                {% csrf_token %}
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="cus_name"><strong>Customer's name</strong></label>
+                  <input type="text" id="cus_name" name="cus_name" class="form-control" />
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="cus_email"><strong>Customer's email</strong></label>
+                  <input type="email" id="cus_email" name="cus_email" class="form-control" />
+                </div>
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="cus_pass"><strong>Customer's password</strong></label>
+                  <input type="password" id="cus_pass" name="cus_pass" class="form-control" />
+                </div>
+  
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4" style="background-color: #E8DB09 !important;">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="chbox" checked />
+                  <label class="form-check-label" for="chbox">
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+  
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-block mb-4" style="background-color: #E8DB09 !important;">
+                  Sign up
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>follow us on:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="../../../static/images/v_001.jpg" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+
+<!-- froms end -->
+
+{% endblock %}
+
+
+
+
+<!-- 
+                    <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text" id="form3Example1" class="form-control" />
+                      <label class="form-label" for="form3Example1">First name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                        <input type="email" id="form3Example2" class="form-control" />
+                        <label class="form-label" for="form3Example3">Email address</label>
+                    </div>
+                  </div>
+                </div>
+-->

@@ -1,0 +1,139 @@
+{% extends 'droppin/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="">
+    <br><br>
+    <br>
+    <div class="main1">
+        <h3>NEATLAND COMMENTS</h3>
+        <hr>
+    </div>
+</div>
+
+<!-- forms start -->
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-2 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-3">Set a comment now</h2>
+              <em>(S'inscrire d'abord)<a class="nav-link btn btn-warning" href="{% url 'connect' %}">ici</a></em>
+              <br>
+
+              {% if user.is_authenticated %}
+
+              <form class="needs-validation" id="form2" action="#" method="POST">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                {% csrf_token %}
+
+                <!-- Client name & email -->
+                <div class="d-flex justify-content-between">
+
+                    <div class="form-outline mb-4 m-1 col-md-4">
+                        <label class="form-label" for="cmt_name"><strong>Commentateur</strong> <em>(Name)</em></label>
+                        <input type="text" id="cmt_name" name="cmt_name" class="form-control" data-pdf-form-field="true" required />
+                    </div>
+
+                    <div class="form-outline mb-4 m-1 col-md-3">
+                        <label class="form-label" for="cmt_address"><strong>Adresse</strong> <em>(Address)</em></label>
+                        <input type="text" id="cmt_address" name="cmt_address" class="form-control" data-pdf-form-field="true" required />
+                    </div>
+
+                    <div class="form-outline mb-4 m-1 col-md-4">
+                        <label class="form-label" for="cmt_time"><strong>Edité le</strong> <em>(Date + Time)</em></label>
+                        <input type="datetime-local" id="cmt_time" name="cmt_time" class="form-control" data-pdf-form-field="true" required />
+                    </div>
+                </div>
+              
+                <!-- Comment text -->
+                <div class="d-flex justify-content-between">
+
+                    <!-- Message input -->
+                    <div class="form-outline mb-4 col-md-12">
+                        <label class="form-label" for="cmt_description"><strong>Commentaire</strong></label>  
+                        <textarea type="password" id="cmt_description" name="cmt_description" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                
+  
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" name="checkIt" id="checkIt" checked />
+                  <label class="form-check-label" for="checkIt">
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+  
+                <!-- Submit button -->
+                <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-block mb-4">
+                  Envoyer
+                </button>
+  
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>follow us on:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://whatsapp.com/channel/0029VaDMUZe1dAvvszclVP3U"><i class="bi bi-whatsapp text-black"></i></a>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://web.facebook.com/profile.php?id=100087106972406"><i class="bi bi-facebook text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://www.instagram.com/neatitcorp/"><i class="bi bi-instagram text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://twitter.com/NeatitCorp/status/1667249733004402688"><i class="bi bi-twitter text-black"></i></a>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                      <a href="https://www.linkedin.com/in/neat-it-corp-674963272/"><i class="bi bi-linkedin text-black"></i></a>
+                  </button>
+                </div>
+              </form>
+
+              {% endif %}
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="{% static 'images/v_001.jpg' %}" width="600" height="800" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+  
+
+<!-- froms end -->
+
+{% endblock %}
+

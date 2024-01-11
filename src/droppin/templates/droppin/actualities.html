@@ -1,0 +1,355 @@
+{% extends 'droppin/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="">
+    <br><br>
+    <br>
+    <div class="main1">
+        <h3>NEATLAND ACTUALITIES</h3>
+        <hr>
+    </div>
+</div>
+
+
+<!-- zone 0 start -->
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="container home">
+                <!-- sliders start -->
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-controls">
+                        <ol class="carousel-indicators">
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-image: url('../../../static/images/card_1.jpg');"></li>
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2" style="background-image: url('../../../static/images/cloud.jpg');"></li>
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 2" style="background-image: url('../../../static/images/web_2.jpg');"></li>
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 2" style="background-image: url('../../../static/images/sce_2.jpg');"></li>
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 3" style="background-image: url('../../../static/images/shoot_3.jpg');"></li>
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="5" aria-label="Slide 4" style="background-image: url('../../../static/images/gadget_1.jpg');"></li>
+                            <li type="button" data-bs-target="#carousel" data-bs-slide-to="6" aria-label="Slide 5" style="background-image: url('../../../static/images/video_camera.jpeg');"></li>
+                        </ol>
+                        <a class="carousel-control-prev" role="button" href="#carousel" data-bs-slide="prev">
+                            <img src="{% static 'images/backward.png' %}" class="" width="75%" alt="droppin">
+                        </a>
+                        <a class="carousel-control-next" role="button" href="#carousel" data-bs-slide="next">
+                            <img src="{% static 'images/forward.png' %}" class="" width="75%" alt="droppin">
+                        </a>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active img" style="background-image: url('../../../static/images/card_1.jpg');">
+                        <div class="container">
+                            <h2>Visiting Cards</h2>
+                            <p>Professional &amp; Inviting Cards</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" style="background-image: url('../../../static/images/cloud.jpg');">
+                        <div class="container">
+                            <h2>Shootings Photos</h2>
+                            <p>Photographies for Weddings, Ceremonies, Films &amp; Castings</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" style="background-image: url('../../../static/images/web_2.jpg');">
+                        <div class="container">
+                            <h2>Advertising Spots</h2>
+                            <p>Enterprises Pancarts, Rollups, &amp; Banners</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" style="background-image: url('../../../static/images/sce_2.jpg');">
+                        <div class="container">
+                            <h2>2D &amp; 3D Printings</h2>
+                            <p>Print out your logos, brands, &amp; registered trademarks</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" style="background-image: url('../../../static/images/shoot_3.jpg');">
+                        <div class="container">
+                            <h2>NEATLAND Events</h2>
+                            <p>Allow us to organize and cover your events, weddings, birthdays, honeymoons</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" style="background-image: url('../../../static/images/gadget_1.jpg');">
+                        <div class="container">
+                            <h2>Customization &amp; Gadgets</h2>
+                            <p>Order, your customized outfits, and packagings</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item" style="background-image: url('../../../static/images/video_camera.jpeg');">
+                        <div class="container text-white">
+                            <h2>Video Surveillance</h2>
+                            <p>Secure your Compounds, Properties, Stores, and Homes</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                <!-- sliders end -->
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+
+<!-- zone 1 start -->
+<div class="container m-2">
+    <h3>RECENT POSTS</h3>
+    <hr>
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            {% csrf_token %}
+
+            {% for posts in post %}
+
+                <div class="col-md-4">
+                    <div class="card p-3 mb-2" style="background-color: #E8DB09 !important;">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="icon"> <i class="bi bi-person-badge-fill"></i> </div>
+                                <div class="ms-2 c-details">
+                                    <h6 class="mb-0">{{posts.title_post}}</h6> <span>{{posts.rated_post}}</span>
+                                </div>
+                            </div>
+                            <div class="badge"> <span>Post n°{{posts.post_id}}</span> </div>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="heading">{{posts.description_post}} : <br> by {{posts.author_post}}</h3>
+                            <div class="mt-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{posts.capacity_post}}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between"> 
+                                    <span class="text1">On the {{posts.date_created}} <span class="text2">{{posts.post_id}} over {{posts.capacity_post}} capacity</span></span>
+                                    <span><a class="btn-warning badge text-black" href="{% url 'services' %}"><i class="bi bi-pencil-square"></i></a> Post</span>
+                                    <!-- Checkbox -->
+                                    <div class="form-check d-flex justify-content-center mb-2">
+                                        <input class="me-2 check" type="checkbox" value="" id="star" unchecked />
+                                        <label class="form-check-label text-black" for="star"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> Like</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+            <div class="col-md-3">
+                </br>
+                    <ul class="pagination">
+                        {% if post.has_previous %}
+                        <li class="page-item" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_post={{ post.previous_page_number }}">Précédente</a></li>
+                        {% endif %}
+                
+                        <li class="page-item active" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_post={{ post.number }}">{{ post.number }}</a></li>
+                
+                        {% if post.has_next %}
+                        <li class="page-item" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_post={{ post.next_page_number }}">Suivante</a></li>
+                        {% endif %}
+                    </ul>
+                </br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br id="about">
+
+<!-- zone 1 end -->
+
+
+<!-- zone 3 start -->
+
+<div class="container m-2">
+    <h3>ABOUT NEAT IT CORP</h3>
+    <hr>
+
+    <!-- zone 2 start -->
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-between">
+                <div class="col-md-4">
+                    <div class="p-3">
+                        <h5 class="p-1" style="background-color: #E8DB09 !important;">Who is NEAT IT CORP ?</h5>
+                        <p style="text-indent:20px;">NEAT IT CORP est un label né de l'union d'un collège d'ingénieurs passionnés des technologies de l'information et désireux de répondre aux besoins des utilisateurs, pour ce qui est de leur branding et de leur étoffe informatique. Nous nous établissons comme fournisseur par excellence de solutions informatiques inhérentes, taillées sur mesure à la demande de la clientèle. La digitalisation des services au sein d'une entreprise reste en gros notre affaire.</p>
+                        <hr>
+                        <h5 class="p-1" style="background-color: #E8DB09 !important;">What is our focus nowadays ?</h5>
+                        <p style="text-indent:20px;">Aujourd'hui NEAT IT CORP, est cette marque déposée à services variés notamment : <strong> la conception graphique, le web design, le community-management, la transfiguration digitale, la photographie professionnelle, et la sécurité par vidéo-surveillance (installation et déploiement des systèmes de sécurité par vidéo-détection, etc...) </strong>. Nous sommes aussi une équipe de formateurs en Technologie de l'Information et de la Communication.</p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="p-3">
+                        <h5 class="p-1" style="background-color: #E8DB09 !important;">What are our Assets ?</h5>
+                        <p>Du point de vue, opérationnel NEAT IT CORP, concilie créativité, efficience, professionalisme, expertise et coût moindre.<br> <strong> Professionnel &amp; Efficient : </strong> Ce sont les critères définissant le mieux notre label, au regard de nos visuels, nos produits, services et partenariats avec des entreprises de marque telles que PANZANI, KADIS GROUP, BIA GROUP, AFISA, OK FOODS, MAYA &amp; Cie, TAMPICO, etc... <br> Nous avons le bouquet qui vous convient pour déployer la totale médiatisation et le branding de votre label. Aussi, nous offrons à tous les désireux et intéressés des séminaires et des ateliers associés à chacunes de nos formules. NEAT IT CORP, c'est une jeune équipe dynamique passionnée des technologies de l'information.</p>
+                        <hr>
+                        <h5 class="p-1" style="background-color: #E8DB09 !important;">Pourquoi choisir NEAT IT CORP?</h5>
+                        <p>Optez pour des créativités personnalisées et des délais respectés de livraison de nos produit et service ! Il est toujours mieux de bien faire, mais surtout livrer à temps ! Nous ne fournissons pas que des produits ou des services essentiellement prototypés NEAT IT CORP, mais aussi nous assurons la rélève : eh oui, la relève c'est nous, c'est vous, c'est NEAT IT CORP ! Profitez de nos formations et de nos cours en lignes à moindres coûts !</p>
+                        <hr>
+                        <h5 class="p-1" style="background-color: #E8DB09 !important;">La startup communautaire !</h5>
+                        <p>Au travers de nos branches de développement et secteurs de recherches, nous tendons la main à tous les potentiels, porteurs ou non, quit à ce que nous parvenions à les transformer oui, mais totalement ! Rejoignez notre équipe projet <strong>NEAT IT CORP STARTUP</strong> et bâtissons le monde de demain ! Soyez de ceux qui écrivent l'histoire, notre histoire, votre histoire, l'histoire du monde !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- zone 2 end -->
+
+
+<!-- zone 3 start -->
+
+<style>
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 16px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #E8DB09 !important;;
+    }
+
+</style>
+
+<div class="container m-2">
+    <h3>RECENT ORDERS</h3>
+    <hr>
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            
+                <div class="container col-md-4">
+                    <h2>This are some customers orders - <span> clock : <strong>({{count_order}})</strong></span></h2>
+                    <p>Here you can go through to see what you or someones ordered !</p>
+                </div>
+
+                <div class="container col-md-8 float-end">
+                {% csrf_token %}
+
+                    <table>
+                        <tr class="">
+                            <th class="col-md-3">Client Name</th>
+                            <th class="col-md-2">Client City</th>
+                            <th class="col-md-4">Product</th>
+                            <th class="col-md-1">Quantity</th>
+                            <th class="col-md-2">Delivery's date</th>
+                        </tr>
+                        {% for orders in order %}
+
+                        <tr class="">
+                            <td class="col-md-3">{{orders.cli_name}}</td>
+                            <td class="col-md-2">{{orders.cli_city}}</td>
+                            <td class="col-md-4">{{orders.cli_subj}}</td>
+                            <td class="col-md-1">{{orders.cli_qty}}</td>
+                            <td class="col-md-2">{{orders.cli_date}}</td>
+                        </tr>
+
+                        {% endfor %}
+                    </table>
+                </div>
+
+            <div class="col-md-3">
+                </br>
+                    <ul class="pagination">
+                        {% if order.has_previous %}
+                        <li class="page-item" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_order={{ order.previous_page_number }}">Précédente</a></li>
+                        {% endif %}
+                
+                        <li class="page-item active" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_order={{ order.number }}">{{ order.number }}</a></li>
+                
+                        {% if order.has_next %}
+                        <li class="page-item" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_order={{ order.next_page_number }}">Suivante</a></li>
+                        {% endif %}
+                    </ul>
+                </br>
+            </div>
+            <br>
+        </div>
+
+        
+
+        <h3>RECENT COMMENTS</h3>
+        <hr>
+    </div>
+</div>
+<br>
+
+<!-- zone 3 end -->
+
+
+<!-- zone 4 end -->
+
+<div class="container mt-5 mb-3">
+    <div class="row">
+        {% csrf_token %}
+
+        {% for commentors in commentor %}
+        <div class="col-md-4">
+            <div class="card p-3 mb-2" style="background-color: #E8DB09 !important;">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="icon"> <i class="bi bi-person-circle"></i> </div>
+                        <div class="ms-2 c-details">
+                            <h6 class="mb-0">{{commentors.cmt_name}}</h6> <span>Commented on {{commentors.cmt_time}}</span>
+                        </div>
+                    </div>
+                    <div class="badge"> <span class="text-black fs-6 fw-bold"><a class="btn-warning" href="{% url 'comment' %}"><i class="bi bi-plus-lg heading"></i> New</a></span> </div>
+                </div>
+                <div class="mt-5">
+                    <p class="">{{commentors.cmt_description}}</p>
+                    <div class="mt-5">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="mt-3 d-flex justify-content-between"> 
+                            <span class="text1">{{commentors.cmt_id}}°<span class="text2"> | {{commentors.cmt_address}}</span></span>
+                            <div class="badge"> <span class="fs-6 fw-bold"><a class="btn-warning" href="{% url 'comment' %}"><i class="bi bi-pencil-square heading text-black"></i></a></span> </div>
+                            <div class="badge"> <span class="fs-6 fw-bold"><a class="btn-warning" href="{% url 'booking' %}"><i class="bi bi-trash heading text-danger"></i></a></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="col-md-3">
+    </br>
+        <ul class="pagination">
+            {% if commentor.has_previous %}
+            <li class="page-item" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_commentor={{ commentor.previous_page_number }}">Précédente</a></li>
+            {% endif %}
+    
+            <li class="page-item active" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_commentorr={{ commentor.number }}">{{ commentor.number }}</a></li>
+    
+            {% if commentor.has_next %}
+            <li class="page-item" style="background-color: #E8DB09 !important;"><a class="page-link" href="?page_commentor={{ commentor.next_page_number }}">Suivante</a></li>
+            {% endif %}
+        </ul>
+    </br>
+</div>
+</div>
+</div>
+
+<br>
+
+<!-- zone 4 end -->
+
+
+{% endblock %}
+
+
